@@ -1,2 +1,2 @@
 def rolar_dados (n):
-    return n 
+    return n + 1 
