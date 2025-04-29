@@ -16,18 +16,8 @@ def guardar_dado(rolados, estoque, guardar):
     del rolados[guardar]
     return [rolados, estoque]
 
-def remover_dado(rodados, guardados, dado_sai):
-    sai = guardados[dado_sai]
-    rodados.append(sai)
-    del guardados[dado_sai]
-    return [rodados, guardados]
-
-
-
-
-
-
-
-    
-
->>>>>>> 1117bf1fbcaad69c8cbd78e7dd7b35637894918a
+def remover_dado(rodados_, guardados_, dado_sai):
+    sai = guardados_[dado_sai]
+    rodados_.append(sai)
+    del guardados_[dado_sai]
+    return [rodados_, guardados_]
