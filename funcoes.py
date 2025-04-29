@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-def remover_dado(rodados, guardados, dado_sai):
-    sai = guardados[dado_sai]
-    rodados.append(sai)
-    del guardados[dado_sai]
-    return [rodados, guardados]
-=======
+
 import random
 
 def rolar_dados(n):
@@ -21,6 +15,13 @@ def guardar_dado(rolados, estoque, guardar):
     estoque.append(guarda)
     del rolados[guardar]
     return [rolados, estoque]
+
+def remover_dado(rodados, guardados, dado_sai):
+    sai = guardados[dado_sai]
+    rodados.append(sai)
+    del guardados[dado_sai]
+    return [rodados, guardados]
+
 
 
 
