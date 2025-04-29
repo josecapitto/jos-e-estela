@@ -59,6 +59,5 @@ def calcula_pontos_soma(sequência):
                 valor = 50
     return valor 
 
-print(calcula_pontos_soma([4, 4, 2, 3, 3]))
 
 
