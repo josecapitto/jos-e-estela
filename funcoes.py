@@ -38,6 +38,7 @@ def calcula_pontos_regra_simples (faces):
 # Questão 5 - Função para calcular pontos
 def calcula_pontos_soma(sequência):
     soma = 0
+    soma1 = 0 
     if sequência == [1, 2, 3, 4] or sequência == [2, 3, 4, 5] or sequência == [3, 4, 5, 6]:
         valor = 15
     if sequência == [1, 2, 3, 4, 5] or sequência == [2, 3, 4, 5, 6]:
@@ -51,9 +52,13 @@ def calcula_pontos_soma(sequência):
         for i in sequência:
             if num != i:
                 for numero in sequência:
-                    soma += numero
-                    valor = soma
+                    soma1 += numero
+                    valor = soma1
                 break
             else:
                 valor = 50
     return valor 
+
+print(calcula_pontos_soma([4, 4, 2, 3, 3]))
+
+
