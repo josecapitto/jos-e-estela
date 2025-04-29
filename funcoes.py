@@ -37,18 +37,22 @@ def calcula_pontos_regra_simples (faces):
 
 # Questão 5 - Função para calcular pontos
 def calcula_pontos_soma(sequência):
-
+    soma = 0
     if sequência == [1, 2, 3, 4] or sequência == [2, 3, 4, 5] or sequência == [3, 4, 5, 6]:
         valor = 15
     if sequência == [1, 2, 3, 4, 5] or sequência == [2, 3, 4, 5, 6]:
         valor = 30
     else:
-        valor = sum(sequência)
+        for numero in sequência:
+            soma += numero
+            valor = soma
     if len(sequência) == 5:
         num = sequência[0]
         for i in sequência:
             if num != i:
-                valor = sum(sequência)
+                for numero in sequência:
+                    soma += numero
+                    valor = soma
                 break
             else:
                 valor = 50
