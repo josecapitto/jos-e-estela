@@ -10,13 +10,30 @@ def rolar_dados(n):
         i += 1 
     return lista 
 
-# Questão 2 - Guardar o dado escolhido
+# Questão 2 - Função para verificar se o dado é válido
 def guardar_dado(rolados, estoque, guardar): 
     guarda = rolados[guardar]
     estoque.append(guarda)
     del rolados[guardar]
     return [rolados, estoque]
 
+# Questão 3 - Função para verificar se o dado é válido
+def remover_dado(rodados_, guardados_, dado_sai):
+    sai = guardados_[dado_sai]
+    rodados_.append(sai)
+    del guardados_[dado_sai]
+    return [rodados_, guardados_]
+
+# Questão 4 - Função para verificar se o dado é válido
+def calcula_pontos_regra_simples (faces):
+    qtd = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+    for face in faces:
+        if face in qtd:
+            qtd[face] += 1
+    pontos = {}
+    for i in qtd.keys():
+        pontos[i] = qtd[i] * i
+    return pontos
 
 # Questão 5 - Função para calcular pontos
 def calcula_pontos_soma(sequência):
@@ -36,12 +53,3 @@ def calcula_pontos_soma(sequência):
             else:
                 valor = 50
     return valor 
-
-
-
-
-
-
-
-    
-
