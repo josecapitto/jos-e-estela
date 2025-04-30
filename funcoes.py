@@ -60,22 +60,4 @@ def calcula_pontos_soma(sequência):
     return valor 
 
 
-# Questão 8 - Calcula pontuação do full-house
-def calcula_pontos_full_house(sequencia):
-    dic = {}
-    for numero in sequencia:
-        if numero in dic:
-            dic[numero] += 1 
-        else:
-            dic[numero] = 1
-    
 
-    for i in dic:
-        if dic[i] == 3 or dic[i] == 2:
-            soma = 0 
-            for j in sequencia:
-                soma += j
-                valor = soma
-        else:
-            valor = 0 
-    return valor 
