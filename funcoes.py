@@ -115,10 +115,13 @@ def calcula_pontos_quadra(sequencia):
             dic[numero] += 1 
         else:
             dic[numero] = 1
-    if 4 in dic.values():
-        for num in sequencia:
-            soma += num
-            valor = soma
+    
+    for valores in dic.values():
+        if valores >= 4:
+            for num in sequencia:
+                soma += num
+                valor = soma
+            break       
     else:
         valor = 0 
-    return valor 
+    return valor
