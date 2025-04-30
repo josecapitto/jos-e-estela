@@ -91,20 +91,17 @@ def calcula_pontos_sequencia_alta (faces):
 
 # Questão 8 - Calcula pontuação do full-house
 def calcula_pontos_full_house(sequencia):
+    soma = 0 
     dic = {}
     for numero in sequencia:
         if numero in dic:
             dic[numero] += 1 
         else:
             dic[numero] = 1
-    
-
-    for i in dic:
-        if dic[i] == 3 or dic[i] == 2:
-            soma = 0 
-            for j in sequencia:
-                soma += j
-                valor = soma
-        else:
-            valor = 0 
-    return valor 
+    if 2 in dic.values() and 3 in dic.values():
+        for num in sequencia:
+            soma += num
+            valor = soma
+    else:
+        valor = 0 
+    return valor  
