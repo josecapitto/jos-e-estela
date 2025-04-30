@@ -34,3 +34,19 @@ def calcula_pontos_regra_simples (faces):
     for i in qtd.keys():
         pontos[i] = qtd[i] * i
     return pontos
+
+# Questão 5 - Função para calcular a pontuação de sequencia baixa
+def calcula_pontos_sequencia_baixa(faces):
+    qtd = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+    for face in faces:
+        if face in qtd:
+            qtd[face] += 1
+    
+    if qtd[1] >= 1 and qtd[2] >= 1 and qtd[3] >= 1 and qtd[4] >= 1:
+        return 15
+    elif qtd[2] >= 1 and qtd[3] >= 1 and qtd[4] >= 1 and qtd[5] >= 1:
+        return 15
+    elif qtd[3] >= 1 and qtd[4] >= 1 and qtd[5] >= 1 and qtd[6] >= 1:
+        return 15
+    else:
+        return 0
