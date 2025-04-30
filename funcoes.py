@@ -36,28 +36,12 @@ def calcula_pontos_regra_simples (faces):
     return pontos
 
 # Questão 5 - Função para calcular pontos
-def calcula_pontos_soma(sequência):
-    soma = 0
-    soma1 = 0 
-    if sequência == [1, 2, 3, 4] or sequência == [2, 3, 4, 5] or sequência == [3, 4, 5, 6]:
-        valor = 15
-    if sequência == [1, 2, 3, 4, 5] or sequência == [2, 3, 4, 5, 6]:
-        valor = 30
-    else:
-        for numero in sequência:
-            soma += numero
-            valor = soma
-    if len(sequência) == 5:
-        num = sequência[0]
-        for i in sequência:
-            if num != i:
-                for numero in sequência:
-                    soma1 += numero
-                    valor = soma1
-                break
-            else:
-                valor = 50
-    return valor 
+def calcula_pontos_soma(sequencia):
+    soma = 0 
+    for i in sequencia:
+        soma += i
+        valor = soma
+    return valor
 
 # Questão 6 - Função para calcular a pontuação de sequencia baixa
 def calcula_pontos_sequencia_baixa(faces):
@@ -125,3 +109,37 @@ def calcula_pontos_quadra(sequencia):
     else:
         valor = 0 
     return valor
+
+# Questão 10 - Faz pontos de quina
+def calcula_pontos_quina (sequencia):
+    soma = 0 
+    dic = {}
+    for numero in sequencia:
+        if numero in dic:
+            dic[numero] += 1 
+        else:
+            dic[numero] = 1
+    
+    for valores in dic.values():
+        if valores >= 5:
+            return 50      
+    return 0
+
+# Questão 11 - Cartela com os pontos 
+def calcula_pontos_regra_avancada(sequencia):
+    val_cinco = calcula_pontos_quina(sequencia)
+    val_full = calcula_pontos_full_house(sequencia)
+    val_quadra = calcula_pontos_quadra(sequencia)
+    val_baixo = calcula_pontos_sequencia_baixa(sequencia)
+    val_alto = calcula_pontos_sequencia_alta(sequencia)
+    val_qlqr = calcula_pontos_soma(sequencia)
+
+    dic = {}
+    dic['cinco_iguais'] = val_cinco
+    dic['full_house'] = val_full
+    dic['quadra'] = val_quadra
+    dic['sem_combinacao'] = val_qlqr
+    dic['sequencia_alta'] = val_alto
+    dic['sequencia_baixa'] = val_baixo
+    return dic
+print(calcula_pontos_regra_avancada([4, 4, 4, 4, 4]))
