@@ -59,5 +59,52 @@ def calcula_pontos_soma(sequência):
                 valor = 50
     return valor 
 
+# Questão 6 - Função para calcular a pontuação de sequencia baixa
+def calcula_pontos_sequencia_baixa(faces):
+    qtd = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+    for face in faces:
+        if face in qtd:
+            qtd[face] += 1
+    
+    if qtd[1] >= 1 and qtd[2] >= 1 and qtd[3] >= 1 and qtd[4] >= 1:
+        return 15
+    elif qtd[2] >= 1 and qtd[3] >= 1 and qtd[4] >= 1 and qtd[5] >= 1:
+        return 15
+    elif qtd[3] >= 1 and qtd[4] >= 1 and qtd[5] >= 1 and qtd[6] >= 1:
+        return 15
+    else:
+        return 0
 
+#Questão 7 - Função para calcular a pontuação de sequencia alta
+def calcula_pontos_sequencia_alta (faces):
+    qtd = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+    for face in faces:
+        if face in qtd:
+            qtd[face] += 1
+    
+    if qtd[1] >= 1 and qtd[2] >= 1 and qtd[3] >= 1 and qtd[4] >= 1 and qtd[5] >= 1:
+        return 30
+    elif qtd[2] >= 1 and qtd[3] >= 1 and qtd[4] >= 1 and qtd[5] >= 1 and qtd[6] >= 1:
+        return 30
+    else:
+        return 0
 
+# Questão 8 - Calcula pontuação do full-house
+def calcula_pontos_full_house(sequencia):
+    dic = {}
+    for numero in sequencia:
+        if numero in dic:
+            dic[numero] += 1 
+        else:
+            dic[numero] = 1
+    
+
+    for i in dic:
+        if dic[i] == 3 or dic[i] == 2:
+            soma = 0 
+            for j in sequencia:
+                soma += j
+                valor = soma
+        else:
+            valor = 0 
+    return valor 
