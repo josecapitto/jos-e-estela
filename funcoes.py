@@ -10,21 +10,21 @@ def rolar_dados(n):
         i += 1 
     return lista 
 
-# Questão 2 - Guardar o dado escolhido
+# Questão 2 - Função para verificar se o dado é válido
 def guardar_dado(rolados, estoque, guardar): 
     guarda = rolados[guardar]
     estoque.append(guarda)
     del rolados[guardar]
     return [rolados, estoque]
 
-# Questão 3 - Remover o dado escolhido
+# Questão 3 - Função para verificar se o dado é válido
 def remover_dado(rodados_, guardados_, dado_sai):
     sai = guardados_[dado_sai]
     rodados_.append(sai)
     del guardados_[dado_sai]
     return [rodados_, guardados_]
 
-# Questão 4 - Função paracalcular a pontuação com a regra simples
+# Questão 4 - Função para verificar se o dado é válido
 def calcula_pontos_regra_simples (faces):
     qtd = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
     for face in faces:
@@ -35,7 +35,30 @@ def calcula_pontos_regra_simples (faces):
         pontos[i] = qtd[i] * i
     return pontos
 
-# Questão 5 - Função para calcular a pontuação de sequencia baixa
+# Questão 5 - Função para calcular pontos
+def calcula_pontos_soma(sequência):
+    soma = 0
+    soma1 = 0 
+    if sequência == [1, 2, 3, 4] or sequência == [2, 3, 4, 5] or sequência == [3, 4, 5, 6]:
+        valor = 15
+    if sequência == [1, 2, 3, 4, 5] or sequência == [2, 3, 4, 5, 6]:
+        valor = 30
+    else:
+        for numero in sequência:
+            soma += numero
+            valor = soma
+    if len(sequência) == 5:
+        num = sequência[0]
+        for i in sequência:
+            if num != i:
+                for numero in sequência:
+                    soma1 += numero
+                    valor = soma1
+                break
+            else:
+                valor = 50
+    return valor 
+# Questão 6 - Função para calcular a pontuação de sequencia baixa
 def calcula_pontos_sequencia_baixa(faces):
     qtd = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
     for face in faces:
