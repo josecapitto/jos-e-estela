@@ -76,7 +76,7 @@ def calcula_pontos_sequencia_baixa(faces):
         return 0
 
 #Questão 7 - Função para calcular a pontuação de sequencia alta
-def calcula_pontos_sequencia_alta(faces):
+def calcula_pontos_sequencia_alta (faces):
     qtd = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
     for face in faces:
         if face in qtd:
@@ -89,8 +89,46 @@ def calcula_pontos_sequencia_alta(faces):
     else:
         return 0
 
-    # Questão 10 - Faz pontos da quina 
-def calcula_pontos_quina(sequencia):
+# Questão 8 - Calcula pontuação do full-house
+def calcula_pontos_full_house(sequencia):
+    soma = 0 
+    dic = {}
+    for numero in sequencia:
+        if numero in dic:
+            dic[numero] += 1 
+        else:
+            dic[numero] = 1
+    if 2 in dic.values() and 3 in dic.values():
+        for num in sequencia:
+            soma += num
+            valor = soma
+    else:
+        valor = 0 
+    return valor  
+
+# Questão 9 - Faz pontos da quadra 
+def calcula_pontos_quadra(sequencia):
+    soma = 0 
+    dic = {}
+    for numero in sequencia:
+        if numero in dic:
+            dic[numero] += 1 
+        else:
+            dic[numero] = 1
+    
+    for valores in dic.values():
+        if valores >= 4:
+            for num in sequencia:
+                soma += num
+                valor = soma
+            break       
+    else:
+        valor = 0 
+    return valor
+
+# Questão 10 - Faz pontos de quina
+def calcula_pontos_quina (sequencia):
+    soma = 0 
     dic = {}
     for numero in sequencia:
         if numero in dic:
@@ -100,6 +138,5 @@ def calcula_pontos_quina(sequencia):
     
     for valores in dic.values():
         if valores >= 5:
-            return 50       
-        else:
-            return 0
+            return 50      
+    return 0
