@@ -105,3 +105,20 @@ def calcula_pontos_full_house(sequencia):
     else:
         valor = 0 
     return valor  
+
+# Questão 9 - Faz pontos da quadra 
+def calcula_pontos_quadra(sequencia):
+    soma = 0 
+    dic = {}
+    for numero in sequencia:
+        if numero in dic:
+            dic[numero] += 1 
+        else:
+            dic[numero] = 1
+    if 4 in dic.values():
+        for num in sequencia:
+            soma += num
+            valor = soma
+    else:
+        valor = 0 
+    return valor 
