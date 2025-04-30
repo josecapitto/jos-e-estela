@@ -142,4 +142,3 @@ def calcula_pontos_regra_avancada(sequencia):
     dic['sequencia_alta'] = val_alto
     dic['sequencia_baixa'] = val_baixo
     return dic
-print(calcula_pontos_regra_avancada([4, 4, 4, 4, 4]))
