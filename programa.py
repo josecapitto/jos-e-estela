@@ -82,6 +82,7 @@ while i < 12:
         # if (4) imprime a cartela
         elif comando == 4:
             print(imprime_cartela(cartela))
+    i+=1
 
     # while para verificar qual combinacao colocar na cartela 
 
@@ -141,13 +142,13 @@ while i < 12:
     while True :
         combinacao = input("Digite combinação desejada:")
         if combinacao in ['1', '2', '3', '4', '5', '6']:
-            if cartela['regra_simples'][int(combinacao)] == -1:
+            if cartela['regra_simples'][int(combinacao)] != -1:
                 print("Essa combinação já foi utilizada.")
             else:
                 cartela = faz_jogada(dados_guardados, combinacao, cartela)
                 break
         elif combinacao in cartela['regra_avancada']:
-            if cartela['regra_avancada'][combinacao] == -1:
+            if cartela['regra_avancada'][combinacao] != -1:
                 print("Essa combinação já foi utilizada.")
             else:
                 cartela = faz_jogada(dados_guardados, combinacao, cartela)
