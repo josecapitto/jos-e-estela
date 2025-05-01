@@ -52,8 +52,10 @@ while i < 12:
             # num = dados_rolados[indice_g]
             # dados_guardados.append(num)
             # del dados_rolados[indice_g]
-            print(f"Dados rolados: {result_g[0]}")
-            print(f"Dados guardados: {result_g[1]}")
+            rolados = result_g[0]
+            dados_guar = result_g[1]
+            print(f"Dados rolados: {rolados}")
+            print(f"Dados guardados: {dados_guar}")
         # if (2) retira dos dados_guardados
         elif comando == 2:
             indice_r = int(input("Digite o índice do dado a ser removido (0 a 4):"))
@@ -61,8 +63,10 @@ while i < 12:
             # dados_rolados.append(num2)
             # del dados_guardados[indice_r]
             result_r = remover_dado(dados_rolados, indice_r, dados_guardados)
-            print(f"Dados rolados: {result_r[0]}")
-            print(f"Dados guardados: {result_r[1]}")
+            rol = result_r[0]
+            guard = result_r[1]
+            print(f"Dados rolados: {rol}")
+            print(f"Dados guardados: {guard}")
         # if (3) faz a rerrolagem
         elif comando == 3:
             if rerro < 2:
