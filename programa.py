@@ -157,7 +157,7 @@ while i < 12:
             print("Combinação inválida. Tente novamente.")
 
     # Para finalizar o jogo, somas os pontos e colocar o bonus
-    print(imprime_cartela(cartela))
+    imprime_cartela(cartela)
     pontuacao_final = 0
 
     soma_simples = 0
@@ -174,5 +174,5 @@ while i < 12:
         if valor != -1:
             pontuacao_final += valor
     
-    print(f"Pontuação final: {pontuacao_final}")
+    print(f"Pontuação total: {pontuacao_final}")
     
