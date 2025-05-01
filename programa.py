@@ -48,7 +48,7 @@ while i < 12:
         # if (1) adiciona nos dados_guardados
         if comando == 1:
             indice_g = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
-            result_g = guardar_dado(dados_rolados, indice_g, dados_guardados)
+            result_g = guardar_dado(dados_rolados, dados_guardados, indice_g)
             # num = dados_rolados[indice_g]
             # dados_guardados.append(num)
             # del dados_rolados[indice_g]
@@ -62,7 +62,7 @@ while i < 12:
             # num2 = dados_guardados[indice_r]
             # dados_rolados.append(num2)
             # del dados_guardados[indice_r]
-            result_r = remover_dado(dados_rolados, indice_r, dados_guardados)
+            result_r = remover_dado(dados_rolados, dados_guardados, indice_r)
             rol = result_r[0]
             guard = result_r[1]
             print(f"Dados rolados: {rol}")
