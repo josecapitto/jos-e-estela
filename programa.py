@@ -49,9 +49,6 @@ while i < 12:
         if comando == 1:
             indice_g = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
             result_g = guardar_dado(dados_rolados, dados_guardados, indice_g)
-            # num = dados_rolados[indice_g]
-            # dados_guardados.append(num)
-            # del dados_rolados[indice_g]
             rolados = result_g[0]
             dados_guar = result_g[1]
             print(f"Dados rolados: {rolados}")
@@ -59,9 +56,6 @@ while i < 12:
         # if (2) retira dos dados_guardados
         elif comando == 2:
             indice_r = int(input("Digite o índice do dado a ser removido (0 a 4):"))
-            # num2 = dados_guardados[indice_r]
-            # dados_rolados.append(num2)
-            # del dados_guardados[indice_r]
             result_r = remover_dado(dados_rolados, dados_guardados, indice_r)
             rol = result_r[0]
             guard = result_r[1]
@@ -86,6 +80,45 @@ while i < 12:
 
     # while para verificar qual combinacao colocar na cartela 
 
+    while True :
+        combinacao = input("Digite combinação desejada:")
+        if combinacao in ['1', '2', '3', '4', '5', '6']:
+            if cartela['regra_simples'][int(combinacao)] != -1:
+                print("Essa combinação já foi utilizada.")
+            else:
+                cartela = faz_jogada(dados_guardados, combinacao, cartela)
+                break
+        elif combinacao in cartela['regra_avancada']:
+            if cartela['regra_avancada'][combinacao] != -1:
+                print("Essa combinação já foi utilizada.")
+            else:
+                cartela = faz_jogada(dados_guardados, combinacao, cartela)
+                break
+        else:
+            print("Combinação inválida. Tente novamente.")
+
+    # Para finalizar o jogo, somas os pontos e colocar o bonus
+    imprime_cartela(cartela)
+    pontuacao_final = 0
+
+    soma_simples = 0
+    for tipo in cartela['regra_simples']:
+        valor = cartela['regra_simples'][tipo]
+        if valor != -1:
+            soma_simples += valor
+            pontuacao_final += valor
+    if soma_simples >= 63:
+        pontuacao_final += 35
+    
+    for tipo in cartela['regra_avancada']:
+        valor = cartela['regra_avancada'][tipo]
+        if valor != -1:
+            pontuacao_final += valor
+    
+    print(f"Pontuação total: {pontuacao_final}")
+
+
+    
     # while combinacao != " ":          
     #     combinacao = input("Digite combinação desejada:")
     #     # QUINA
@@ -138,41 +171,4 @@ while i < 12:
     #             cartela['regra_avancada']['sem_combinacao'] = sem_combinacao
 
     # i += 1 
-
-    while True :
-        combinacao = input("Digite combinação desejada:")
-        if combinacao in ['1', '2', '3', '4', '5', '6']:
-            if cartela['regra_simples'][int(combinacao)] != -1:
-                print("Essa combinação já foi utilizada.")
-            else:
-                cartela = faz_jogada(dados_guardados, combinacao, cartela)
-                break
-        elif combinacao in cartela['regra_avancada']:
-            if cartela['regra_avancada'][combinacao] != -1:
-                print("Essa combinação já foi utilizada.")
-            else:
-                cartela = faz_jogada(dados_guardados, combinacao, cartela)
-                break
-        else:
-            print("Combinação inválida. Tente novamente.")
-
-    # Para finalizar o jogo, somas os pontos e colocar o bonus
-    imprime_cartela(cartela)
-    pontuacao_final = 0
-
-    soma_simples = 0
-    for tipo in cartela['regra_simples']:
-        valor = cartela['regra_simples'][tipo]
-        if valor != -1:
-            soma_simples += valor
-            pontuacao_final += valor
-    if soma_simples >= 63:
-        pontuacao_final += 35
-    
-    for tipo in cartela['regra_avancada']:
-        valor = cartela['regra_avancada'][tipo]
-        if valor != -1:
-            pontuacao_final += valor
-    
-    print(f"Pontuação total: {pontuacao_final}")
     
