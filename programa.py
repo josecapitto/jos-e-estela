@@ -117,7 +117,7 @@ while i < 12:
     
     print(f"Pontuação total: {pontuacao_final}")
 
-
+ #puxar
     
     # while combinacao != " ":          
     #     combinacao = input("Digite combinação desejada:")
