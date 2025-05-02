@@ -104,7 +104,7 @@ while i < 12:
     print(f"Dados guardados {dados_guardados}")
     i+=1 #AAAA 
 
-imprime_cartela(cartela)
+print(imprime_cartela(cartela))
 pontuacao_final = 0
 
 soma_simples = 0
@@ -113,12 +113,16 @@ for tipo in cartela['regra_simples']:
     if valor != -1:
         soma_simples += valor
         pontuacao_final += valor
-    if soma_simples >= 63:
-        pontuacao_final += 35
+
+if soma_simples >= 63:
+    pontuacao_final += 35
     
 for tipo in cartela['regra_avancada']:
     valor = cartela['regra_avancada'][tipo]
     if valor != -1:
         pontuacao_final += valor
     
-    print(f"Pontuação total: {pontuacao_final}")
+print(f"Pontuação total: {pontuacao_final}")
+
+
+    
