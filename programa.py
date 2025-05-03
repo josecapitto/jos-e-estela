@@ -140,6 +140,4 @@ for tipo, val in cartela['regra_avancada'].items():
     if val != -1:
         pontuacao_final += val
 
-
-
 print(f"Pontuação total: {pontuacao_final}")
