@@ -28,7 +28,7 @@ print(f"Dados rolados: {dados_rolados}")
 
 # Dados guardados (vazio por enquanto)
 dados_guardados = []
-print(f"Dados guardados {dados_guardados}")
+print(f"Dados guardados: {dados_guardados}")
 
 # Variavel para que o while de verificar combinacoes funcione (linha 69)
 combinacao = " "
@@ -78,8 +78,11 @@ while i < 1:
         # if (4) imprime a cartela
         elif comando == '4':
             print(imprime_cartela(cartela))
-        else:
+        elif comando == '0':
             break
+        else:
+            print("Opção inválida. Tente novamente.")
+
     
     # while para verificar qual combinacao colocar na cartela 
 
