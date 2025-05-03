@@ -167,8 +167,5 @@ while i < 12:
     #             print("Essa combinação já foi utilizada.")
     #             combinacao = " "
     #         else:
-    #             sem_combinacao = calcula_pontos_sequencia_baixa(dados_guardados)
-    #             cartela['regra_avancada']['sem_combinacao'] = sem_combinacao
-
-    # i += 1 
+    #          
     
