@@ -38,7 +38,7 @@ comando = 1
 i = 0 
 
 # While para que o jogo dure 12 rodadas (linha 117 está a soma de seu i, contando cada rodada)
-while i < 1:
+while i < 12:
     # rerro = rerrolagem (tem que reinicar a cada rodada)
     rerro = 0
     comando = 1
@@ -77,7 +77,7 @@ while i < 1:
                 print(f"Dados guardados: {dados_guardados}")
         # if (4) imprime a cartela
         elif comando == '4':
-            print(imprime_cartela(cartela))
+            imprime_cartela(cartela)
         elif comando == '0':
             break
         else:
