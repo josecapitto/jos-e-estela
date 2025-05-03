@@ -40,7 +40,13 @@ comando = 1
 i = 0 
 
 # While para que o jogo dure 12 rodadas (linha 117 está a soma de seu i, contando cada rodada)
-while i < 12:
+while i < 12:    
+    
+    dados_guardados = []        
+    qntd = 5                  
+    dados_rolados = rolar_dados(qntd)
+
+
     # rerro = rerrolagem (tem que reinicar a cada rodada)
     rerro = 0
     comando = 1
@@ -120,12 +126,12 @@ pontuacao_final = 0
 soma_simples = 0
 
 # Soma da regra simples
-for tipo, val in cartela['regra_simples'].items():
-    if val != -1:
-        soma_simples += val
-        pontuacao_final += val
+for categoria in cartela['regra_simples']:
+    if cartela['regra_simples'][categoria] != -1:
+        soma_simples += cartela['regra_simples'][categoria]
+        pontuacao_final += cartela['regra_simples'][categoria]
 
-# Bônus por atingir 63 ou mais na regra simples
+# bônus
 if soma_simples >= 63:
     pontuacao_final += 35
 
@@ -133,5 +139,7 @@ if soma_simples >= 63:
 for tipo, val in cartela['regra_avancada'].items():
     if val != -1:
         pontuacao_final += val
+
+
 
 print(f"Pontuação total: {pontuacao_final}")
