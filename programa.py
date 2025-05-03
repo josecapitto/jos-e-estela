@@ -44,11 +44,11 @@ while i < 1:
     comando = 1
     combinacao = " "
     # while que depende do comando para parar (ele parar apenas quando for contabilizar as combinacoes)
-    while comando != 0:
+    while comando != '0':
         comando = input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
         # OS IFS que funcionam dependendo do comando 
         # if (1) adiciona nos dados_guardados
-        if comando == 1:
+        if comando == '1':
             indice_g = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
             result_g = guardar_dado(dados_rolados, dados_guardados, indice_g)
             rolados = result_g[0]
@@ -56,7 +56,7 @@ while i < 1:
             print(f"Dados rolados: {rolados}")
             print(f"Dados guardados: {dados_guar}")
         # if (2) retira dos dados_guardados
-        elif comando == 2:
+        elif comando == '2':
             indice_r = int(input("Digite o índice do dado a ser removido (0 a 4):"))
             result_r = remover_dado(dados_rolados, dados_guardados, indice_r)
             rol = result_r[0]
@@ -64,7 +64,7 @@ while i < 1:
             print(f"Dados rolados: {rol}")
             print(f"Dados guardados: {guard}")
         # if (3) faz a rerrolagem
-        elif comando == 3:
+        elif comando == '3':
             if rerro < 2:
                 qntd = len(dados_rolados)
                 dados_rolados = rolar_dados(qntd)
@@ -78,6 +78,8 @@ while i < 1:
         # if (4) imprime a cartela
         elif comando == 4:
             print(imprime_cartela(cartela))
+        else:
+            break
     
     # while para verificar qual combinacao colocar na cartela 
 
@@ -121,4 +123,3 @@ for tipo in cartela['regra_avancada']:
         pontuacao_final += valor
     
 print(f"Pontuação total: {pontuacao_final}")
-
