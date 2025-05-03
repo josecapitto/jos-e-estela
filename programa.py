@@ -24,7 +24,7 @@ imprime_cartela(cartela)
 # Primeira rolada de dados 
 qntd = 5
 dados_rolados = rolar_dados(qntd)
-print(dados_rolados)
+print(f"Dados rolados: {dados_rolados}")
 
 # Dados guardados (vazio por enquanto)
 dados_guardados = []
@@ -76,7 +76,7 @@ while i < 1:
                 print(f"Dados rolados: {dados_rolados}")
                 print(f"Dados guardados: {dados_guardados}")
         # if (4) imprime a cartela
-        elif comando == 4:
+        elif comando == '4':
             print(imprime_cartela(cartela))
         else:
             break
