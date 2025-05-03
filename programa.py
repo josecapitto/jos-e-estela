@@ -21,6 +21,8 @@ cartela= {
 }
 
 
+imprime_cartela(cartela)
+
 # Primeira rolada de dados 
 qntd = 5
 dados_rolados = rolar_dados(qntd)
@@ -37,7 +39,6 @@ combinacao = " "
 comando = 1
 i = 0 
 
-imprime_cartela(cartela)
 # While para que o jogo dure 12 rodadas (linha 117 está a soma de seu i, contando cada rodada)
 while i < 12:
     # rerro = rerrolagem (tem que reinicar a cada rodada)
@@ -111,7 +112,7 @@ while i < 12:
 
 imprime_cartela(cartela)
 pontuacao_final = 0
-
+valor = 0
 soma_simples = 0
 for tipo in cartela['regra_simples']:
     valor = cartela['regra_simples'][tipo]
