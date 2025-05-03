@@ -76,6 +76,7 @@ def calcula_pontos_sequencia_alta (faces):
 # Questão 8 - Calcula pontuação do full-house
 def calcula_pontos_full_house(sequencia):
     soma = 0 
+    valor = 0
     dic = {}
     for numero in sequencia:
         if numero in dic:
@@ -93,6 +94,7 @@ def calcula_pontos_full_house(sequencia):
 # Questão 9 - Faz pontos da quadra 
 def calcula_pontos_quadra(sequencia):
     soma = 0 
+    valor = 0
     dic = {}
     for numero in sequencia:
         if numero in dic:

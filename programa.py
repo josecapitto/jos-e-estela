@@ -86,13 +86,11 @@ while i < 12:
         if combinacao in ['1', '2', '3', '4', '5', '6']:
             if cartela['regra_simples'][int(combinacao)] != -1:
                 print("Essa combinação já foi utilizada.")
-                combinacao = " "
             else:
                 cartela = faz_jogada(dados_guardados, combinacao, cartela)
         elif combinacao in cartela['regra_avancada']:
             if cartela['regra_avancada'][combinacao] != -1:
                 print("Essa combinação já foi utilizada.")
-                combinacao = " "
             else:
                 cartela = faz_jogada(dados_guardados, combinacao, cartela)
         else:
