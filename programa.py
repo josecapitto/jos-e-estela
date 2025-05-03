@@ -115,18 +115,23 @@ while i < 12:
     i+=1 #AAAA 
 
 imprime_cartela(cartela)
+
 pontuacao_final = 0
-valor = 0
 soma_simples = 0
-for tipo in cartela['regra_simples']:
-    valor = cartela['regra_simples'][tipo]
-    if valor != -1:
-        soma_simples += valor
-        pontuacao_final += valor
+
+# Soma da regra simples
+for tipo, val in cartela['regra_simples'].items():
+    if val != -1:
+        soma_simples += val
+        pontuacao_final += val
+
+# Bônus por atingir 63 ou mais na regra simples
 if soma_simples >= 63:
     pontuacao_final += 35
-for tipo, valor in cartela['regra_avancada'].items():
-    if valor != -1:
-        pontuacao_final += valor
+
+# Soma da regra avançada
+for tipo, val in cartela['regra_avancada'].items():
+    if val != -1:
+        pontuacao_final += val
 
 print(f"Pontuação total: {pontuacao_final}")
