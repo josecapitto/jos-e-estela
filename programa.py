@@ -19,7 +19,7 @@ cartela= {
         'cinco_iguais': -1
     }
 }
-imprime_cartela(cartela)
+
 
 # Primeira rolada de dados 
 qntd = 5
@@ -37,6 +37,7 @@ combinacao = " "
 comando = 1
 i = 0 
 
+imprime_cartela(cartela)
 # While para que o jogo dure 12 rodadas (linha 117 está a soma de seu i, contando cada rodada)
 while i < 12:
     # rerro = rerrolagem (tem que reinicar a cada rodada)
@@ -121,7 +122,7 @@ for tipo in cartela['regra_simples']:
 if soma_simples >= 63:
     pontuacao_final += 35
     
-for tipo in cartela['regra_avancada']:
+for tipo in cartela['regra_avancada'].items():
     valor = cartela['regra_avancada'][tipo]
     if valor != -1:
         pontuacao_final += valor
