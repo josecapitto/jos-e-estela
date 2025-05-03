@@ -149,14 +149,13 @@ def calcula_pontos_regra_avancada(sequencia):
 def faz_jogada(dados, categoria, aonde_joga):
     if categoria in ['1', '2', '3', '4', '5', '6']:
         pontos = calcula_pontos_regra_simples(dados)
-        num_categoria = int(categoria)
-        pontuacao = pontos[num_categoria]
-        aonde_joga['regra_simples'][num_categoria] = pontuacao
+        num = int(categoria)
+        aonde_joga['regra_simples'][num] = pontos[num]
     else:
         pontos = calcula_pontos_regra_avancada(dados)
-        pontuacao = pontos.get(categoria, 0)
-        aonde_joga['regra_avancada'][categoria] = pontuacao
+        aonde_joga['regra_avancada'][categoria] = pontos[categoria]
     return aonde_joga
+
 
 # Cartela do Jogo
 def imprime_cartela(cartela):

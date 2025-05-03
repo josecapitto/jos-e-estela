@@ -63,8 +63,8 @@ while i < 12:
         elif comando == '2':
             indice_r = int(input("Digite o índice do dado a ser removido (0 a 4):"))
             result_r = remover_dado(dados_rolados, dados_guardados, indice_r)
-            dados_rolados = result_g[0]
-            dados_guardados = result_g[1]
+            dados_rolados = result_r[0]
+            dados_guardados = result_r[1]
 
             print(f"Dados rolados: {dados_rolados}")
             print(f"Dados guardados: {dados_guardados}")
