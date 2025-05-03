@@ -154,7 +154,8 @@ def faz_jogada(dados, categoria, aonde_joga):
         aonde_joga['regra_simples'][num_categoria] = pontuacao
     else:
         pontos = calcula_pontos_regra_avancada(dados)
-        aonde_joga['regra_avancada'][categoria] = pontos[categoria]
+    pontuacao = pontos.get(categoria, 0)
+    aonde_joga['regra_avancada'][categoria] = pontuacao
     return aonde_joga
 
 # Cartela do Jogo

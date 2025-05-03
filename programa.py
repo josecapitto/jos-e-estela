@@ -53,23 +53,27 @@ while i < 12:
         if comando == '1':
             indice_g = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
             result_g = guardar_dado(dados_rolados, dados_guardados, indice_g)
-            rolados = result_g[0]
-            dados_guar = result_g[1]
-            print(f"Dados rolados: {rolados}")
-            print(f"Dados guardados: {dados_guar}")
+        
+            dados_rolados = result_g[0]
+            dados_guardados = result_g[1]
+
+            print(f"Dados rolados: {dados_rolados}")
+            print(f"Dados guardados: {dados_guardados}")
         # if (2) retira dos dados_guardados
         elif comando == '2':
             indice_r = int(input("Digite o índice do dado a ser removido (0 a 4):"))
             result_r = remover_dado(dados_rolados, dados_guardados, indice_r)
-            rol = result_r[0]
-            guard = result_r[1]
-            print(f"Dados rolados: {rol}")
-            print(f"Dados guardados: {guard}")
+            dados_rolados = result_g[0]
+            dados_guardados = result_g[1]
+
+            print(f"Dados rolados: {dados_rolados}")
+            print(f"Dados guardados: {dados_guardados}")
         # if (3) faz a rerrolagem
         elif comando == '3':
             if rerro < 2:
-                qntd = len(dados_rolados)
+                qntd = 5 - len(dados_guardados)
                 dados_rolados = rolar_dados(qntd)
+
                 rerro += 1
                 print(f"Dados rolados: {dados_rolados}")
                 print(f"Dados guardados: {dados_guardados}")
