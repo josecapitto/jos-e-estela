@@ -100,11 +100,12 @@ while i < 1:
     dados_guardados = []
     qntd = 5
     dados_rolados = rolar_dados(qntd)
-    print(dados_rolados)
-    print(f"Dados guardados {dados_guardados}")
+    print(f"Dados rolados: {dados_rolados}")
+    print(f"Dados guardados: {dados_guardados}")
+
     i+=1 #AAAA 
 
-print(imprime_cartela(cartela))
+imprime_cartela(cartela)
 pontuacao_final = 0
 
 soma_simples = 0
