@@ -19,7 +19,7 @@ cartela= {
         'cinco_iguais': -1
     }
 }
-print(imprime_cartela(cartela))
+imprime_cartela(cartela)
 
 # Primeira rolada de dados 
 qntd = 5
@@ -38,7 +38,7 @@ comando = 1
 i = 0 
 
 # While para que o jogo dure 12 rodadas (linha 117 está a soma de seu i, contando cada rodada)
-while i < 12:
+while i < 1:
     # rerro = rerrolagem (tem que reinicar a cada rodada)
     rerro = 0
     comando = 1
