@@ -121,8 +121,7 @@ for tipo in cartela['regra_simples']:
 
 if soma_simples >= 63:
     pontuacao_final += 35
-    
-        pontuacao_final += valor
+    pontuacao_final += valor
 for chave, valor in cartela['regra_avancada'].items():
     if valor != -1:
         pontuacao_final += valor
