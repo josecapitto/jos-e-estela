@@ -40,7 +40,9 @@ i = 0
 # While para que o jogo dure 12 rodadas (linha 117 está a soma de seu i, contando cada rodada)
 while i < 12:
     # rerro = rerrolagem (tem que reinicar a cada rodada)
-    rerro = 0 
+    rerro = 0
+    comando = 1
+    combinacao = " "
     # while que depende do comando para parar (ele parar apenas quando for contabilizar as combinacoes)
     while comando != 0:
         comando = int(input("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:"))
@@ -76,96 +78,49 @@ while i < 12:
         # if (4) imprime a cartela
         elif comando == 4:
             print(imprime_cartela(cartela))
-    i+=1
-
+    
     # while para verificar qual combinacao colocar na cartela 
 
-    while True :
+    while combinacao == " ":
         combinacao = input("Digite combinação desejada:")
         if combinacao in ['1', '2', '3', '4', '5', '6']:
             if cartela['regra_simples'][int(combinacao)] != -1:
                 print("Essa combinação já foi utilizada.")
+                combinacao = " "
             else:
                 cartela = faz_jogada(dados_guardados, combinacao, cartela)
-                break
         elif combinacao in cartela['regra_avancada']:
             if cartela['regra_avancada'][combinacao] != -1:
                 print("Essa combinação já foi utilizada.")
+                combinacao = " "
             else:
                 cartela = faz_jogada(dados_guardados, combinacao, cartela)
-                break
         else:
             print("Combinação inválida. Tente novamente.")
+    dados_guardados = []
+    qntd = 5
+    dados_rolados = rolar_dados(qntd)
+    print(dados_rolados)
+    print(f"Dados guardados {dados_guardados}")
+    i+=1 #AAAA 
 
-    # Para finalizar o jogo, somas os pontos e colocar o bonus
-    imprime_cartela(cartela)
-    pontuacao_final = 0
+print(imprime_cartela(cartela))
+pontuacao_final = 0
 
-    soma_simples = 0
-    for tipo in cartela['regra_simples']:
-        valor = cartela['regra_simples'][tipo]
-        if valor != -1:
-            soma_simples += valor
-            pontuacao_final += valor
-    if soma_simples >= 63:
-        pontuacao_final += 35
-    
-    for tipo in cartela['regra_avancada']:
-        valor = cartela['regra_avancada'][tipo]
-        if valor != -1:
-            pontuacao_final += valor
-    
-    print(f"Pontuação total: {pontuacao_final}")
+soma_simples = 0
+for tipo in cartela['regra_simples']:
+    valor = cartela['regra_simples'][tipo]
+    if valor != -1:
+        soma_simples += valor
+        pontuacao_final += valor
 
- #puxar
+if soma_simples >= 63:
+    pontuacao_final += 35
     
-    # while combinacao != " ":          
-    #     combinacao = input("Digite combinação desejada:")
-    #     # QUINA
-    #     if combinacao == "cinco_iguais":
-    #         if cinco_iguais > 0:
-    #             print("Essa combinação já foi utilizada.")
-    #             combinacao = " "
-    #         else:
-    #             cinco_iguais = calcula_pontos_quina(dados_guardados)
-    #             cartela['regra_avancada']['cinco_iguais'] = cinco_iguais
-    #     # QUADRA
-    #     elif combinacao == "quadra":
-    #         if quadra > 0:
-    #             print("Essa combinação já foi utilizada.")
-    #             combinacao = " "
-    #         else:
-    #             quadra = calcula_pontos_quadra(dados_guardados)
-    #             cartela['regra_avancada'['quadra']] = quadra
-    #     # Full_HOUSE
-    #     elif combinacao == "full_house":
-    #         if full_house > 0:
-    #             print("Essa combinação já foi utilizada.")
-    #             combinacao = " "
-    #         else:
-    #             full_house = calcula_pontos_full_house(dados_guardados)
-    #             cartela['regra_avancada']['full_house'] = full_house
-    #     # SEQUENCIA_BAIXA
-    #     elif combinacao == "sequencia_baixa":
-    #         if sequencia_baixa > 0:
-    #             print("Essa combinação já foi utilizada.")
-    #             combinacao = " "
-    #         else:
-    #             sequencia_baixa = calcula_pontos_sequencia_baixa(dados_guardados)
-    #             cartela['regra_avancada']['sequencia_baixa'] = sequencia_baixa
-    #     # SEQUENCIA_ALTA
-    #     elif combinacao == "sequencia_alta":
-    #         if sequencia_alta > 0:
-    #             print("Essa combinação já foi utilizada.")
-    #             combinacao = " "
-    #         else:
-    #             sequencia_alta = calcula_pontos_sequencia_alta(dados_guardados)
-    #             cartela['regra_avancada']['sequencia_alta'] = sequencia_alta
-    #     # SEM_COMBINACAO
-    #     elif combinacao == "sem_combinacao":
-    #         if sem_combinacao > 0:
-    #             print("Essa combinação já foi utilizada.")
-    #             combinacao = " "
-    #         else:
-    #          
+for tipo in cartela['regra_avancada']:
+    valor = cartela['regra_avancada'][tipo]
+    if valor != -1:
+        pontuacao_final += valor
     
+print(f"Pontuação total: {pontuacao_final}")
+
