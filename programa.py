@@ -21,7 +21,7 @@ cartela= {
 }
 
 
-# imprime_cartela(cartela)
+imprime_cartela(cartela)
 
 # Primeira rolada de dados 
 qntd = 5
