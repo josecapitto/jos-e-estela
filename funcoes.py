@@ -186,7 +186,7 @@ def faz_jogada(dados, categoria, aonde_joga):
 
 def imprime_cartela(cartela):
     print("Cartela de Pontos:")
-    print("-------------------------")  # 25 traços no total
+    print("-------------------------")
     
     for i in range(1, 7):
         valor = cartela['regra_simples'][i]
@@ -195,11 +195,13 @@ def imprime_cartela(cartela):
         else:
             print(f"| {i}:               | {valor:02} |")
 
-    for nome in ['sem_combinacao', 'quadra', 'full_house', 'sequencia_baixa', 'sequencia_alta', 'cinco_iguais']:
+    nomes = ['sem_combinacao', 'quadra', 'full_house', 'sequencia_baixa', 'sequencia_alta', 'cinco_iguais']
+    for nome in nomes:
         valor = cartela['regra_avancada'][nome]
         if valor == -1:
-            print(f"| {nome:<15}: |    |")
+            print(f"| {nome:<17}|    |")
         else:
-            print(f"| {nome:<15}: | {valor:02} |")
+            print(f"| {nome:<17}| {valor:02} |")
 
     print("-------------------------")
+
