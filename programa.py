@@ -57,8 +57,12 @@ while i < 12:
         # OS IFS que funcionam dependendo do comando 
         # if (1) adiciona nos dados_guardados
         if comando == '1':
-            print("Digite o índice do dado a ser guardado (0 a 4):")
-            indice_g = int(input())
+            try:
+                indice_g = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
+            except ValueError:
+                print("Índice inválido. Tente novamente.")
+                continue
+
             result_g = guardar_dado(dados_rolados, dados_guardados, indice_g)
         
             dados_rolados = result_g[0]
@@ -68,8 +72,11 @@ while i < 12:
             print(f"Dados guardados: {dados_guardados}")
         # if (2) retira dos dados_guardados
         elif comando == '2':
-            print("Digite o índice do dado a ser guardado (0 a 4):")
-            indice_r = int(input())
+            try:
+                indice_r = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
+            except ValueError:
+                print("Índice inválido. Tente novamente.")
+                continue
             result_r = remover_dado(dados_rolados, dados_guardados, indice_r)
             dados_rolados = result_r[0]
             dados_guardados = result_r[1]
