@@ -143,3 +143,4 @@ for tipo, val in cartela['regra_avancada'].items():
         pontuacao_final += val
 
 print(f"Pontuação total: {pontuacao_final}")
+# verificando mudancas
