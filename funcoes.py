@@ -167,41 +167,20 @@ def faz_jogada(dados, categoria, aonde_joga):
 
 
 # Cartela do Jogo
-# def imprime_cartela(cartela):
-#     print("Cartela de Pontos:")
-#     print("-"*25)    
-#     for i in range(1, 7):
-#         filler = " " * (15 - len(str(i)))
-#         if cartela['regra_simples'][i] != -1:
-#             print(f"| {i}: {filler}| {cartela['regra_simples'][i]:02} |")
-#         else:
-#             print(f"| {i}: {filler}|    |")
-#     for i in cartela['regra_avancada'].keys():
-#         filler = " " * (15 - len(str(i)))
-#         if cartela['regra_avancada'][i] != -1:
-#             print(f"| {i}: {filler}| {cartela['regra_avancada'][i]:02} |")
-#         else:
-#             print(f"| {i}: {filler}|    |")
-#     print("-"*25)
-
 def imprime_cartela(cartela):
     print("Cartela de Pontos:")
-    print("-------------------------")
-    
+    print("-"*25)    
     for i in range(1, 7):
-        valor = cartela['regra_simples'][i]
-        if valor == -1:
-            print(f"| {i}:               |    |")
+        filler = " " * (15 - len(str(i)))
+        if cartela['regra_simples'][i] != -1:
+            print(f"| {i}: {filler}| {cartela['regra_simples'][i]:02} |")
         else:
-            print(f"| {i}:               | {valor:02} |")
-
-    nomes = ['sem_combinacao', 'quadra', 'full_house', 'sequencia_baixa', 'sequencia_alta', 'cinco_iguais']
-    for nome in nomes:
-        valor = cartela['regra_avancada'][nome]
-        if valor == -1:
-            print(f"| {nome:<17}|    |")
+            print(f"| {i}: {filler}|    |")
+    for i in cartela['regra_avancada'].keys():
+        filler = " " * (15 - len(str(i)))
+        if cartela['regra_avancada'][i] != -1:
+            print(f"| {i}: {filler}| {cartela['regra_avancada'][i]:02} |")
         else:
-            print(f"| {nome:<17}| {valor:02} |")
-
-    print("-------------------------")
+            print(f"| {i}: {filler}|    |")
+    print("-"*25)
 
