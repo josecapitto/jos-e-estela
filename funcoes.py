@@ -159,10 +159,12 @@ def faz_jogada(dados, categoria, aonde_joga):
     if categoria in ['1', '2', '3', '4', '5', '6']:
         pontos = calcula_pontos_regra_simples(dados)
         num_categoria = int(categoria)
-        aonde_joga['regra_simples'][num_categoria] = pontos[num_categoria]
+        if aonde_joga['regra_simples'][num_categoria] == -1:
+            aonde_joga['regra_simples'][num_categoria] = pontos.get(num_categoria, 0)
     else:
         pontos = calcula_pontos_regra_avancada(dados)
-        aonde_joga['regra_avancada'][categoria] = pontos.get(categoria, 0)
+        if aonde_joga['regra_avancada'][categoria] == -1:
+            aonde_joga['regra_avancada'][categoria] = pontos.get(categoria, 0)
     return aonde_joga
 
 
