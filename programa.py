@@ -134,20 +134,41 @@ imprime_cartela(cartela)
 pontuacao_final = 0
 soma_simples = 0
 
-# Soma da regra simples
-for categoria in cartela['regra_simples']:
-    if cartela['regra_simples'][categoria] != -1:
-        soma_simples += cartela['regra_simples'][categoria]
-        pontuacao_final += cartela['regra_simples'][categoria]
+for valor in cartela['regra_simples'].values():
+    if valor > 0:
+        soma_simples += valor
+        pontuacao_final += valor
 
-# bônus
 if soma_simples >= 63:
     pontuacao_final += 35
 
-# Soma da regra avançada
-for tipo, val in cartela['regra_avancada'].items():
-    if val != -1:
-        pontuacao_final += val
+for valor in cartela['regra_avancada'].values():
+    if valor > 0:
+        pontuacao_final += valor
 
 print(f"Pontuação total: {pontuacao_final}")
-# verificando mudancas
+
+
+
+
+
+# pontuacao_final = 0
+# soma_simples = 0
+
+# # Soma da regra simples
+# for categoria in cartela['regra_simples']:
+#     if cartela['regra_simples'][categoria] != -1:
+#         soma_simples += cartela['regra_simples'][categoria]
+#         pontuacao_final += cartela['regra_simples'][categoria]
+
+# # bônus
+# if soma_simples >= 63:
+#     pontuacao_final += 35
+
+# # Soma da regra avançada
+# for tipo, val in cartela['regra_avancada'].items():
+#     if val != -1:
+#         pontuacao_final += val
+
+# print(f"Pontuação total: {pontuacao_final}")
+# # verificando mudancas
