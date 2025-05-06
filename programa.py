@@ -131,7 +131,7 @@ while i < 12:
 #     dados_rolados = rolar_dados(qntd)
 #     print(f"Dados rolados: {dados_rolados}")
 #     print(f"Dados guardados: {dados_guardados}")
-# =
+    i+=1
 
 imprime_cartela(cartela)
 
