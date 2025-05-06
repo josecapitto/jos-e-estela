@@ -213,34 +213,30 @@ while i < 12:
             imprime_cartela(cartela)
 
         elif comando == '0':
-            break
+            while True:
+                combinacao = input("Digite combinação desejada:")
+                dados_totais = []
+                for item in dados_guardados:
+                    dados_totais.append(item)
+                for item in dados_rolados:
+                    dados_totais.append(item)
 
+                if combinacao in ['1', '2', '3', '4', '5', '6']:
+                    if cartela['regra_simples'][int(combinacao)] != -1:
+                        print("Essa combinação já foi utilizada.")
+                    else:
+                        cartela = faz_jogada(dados_totais, combinacao, cartela)
+                        break
+                elif combinacao in cartela['regra_avancada']:
+                    if cartela['regra_avancada'][combinacao] != -1:
+                        print("Essa combinação já foi utilizada.")
+                    else:
+                        cartela = faz_jogada(dados_totais, combinacao, cartela)
+                        break
+                else:
+                    print("Combinação inválida. Tente novamente.")
         else:
             print("Opção inválida. Tente novamente.")
-
-        while True:
-            combinacao = input("Digite combinação desejada:")
-            dados_totais = []
-            for item in dados_guardados:
-                dados_totais.append(item)
-            for item in dados_rolados:
-                dados_totais.append(item)
-
-            if combinacao in ['1', '2', '3', '4', '5', '6']:
-                if cartela['regra_simples'][int(combinacao)] != -1:
-                    print("Essa combinação já foi utilizada.")
-                else:
-                    cartela = faz_jogada(dados_totais, combinacao, cartela)
-                    break
-            elif combinacao in cartela['regra_avancada']:
-                if cartela['regra_avancada'][combinacao] != -1:
-                    print("Essa combinação já foi utilizada.")
-                else:
-                    cartela = faz_jogada(dados_totais, combinacao, cartela)
-                    break
-            else:
-                print("Combinação inválida. Tente novamente.")
-
 
     i += 1
 
