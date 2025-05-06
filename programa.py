@@ -70,8 +70,8 @@ while i < 12:
             dados_rolados = result_g[0]
             dados_guardados = result_g[1]
 
-            # print(f"Dados rolados: {dados_rolados}")
-            # print(f"Dados guardados: {dados_guardados}")
+            print(f"Dados rolados: {dados_rolados}")
+            print(f"Dados guardados: {dados_guardados}")
         # if (2) retira dos dados_guardados
         elif comando == '2':
             indice_r = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
@@ -84,8 +84,8 @@ while i < 12:
             dados_rolados = result_r[0]
             dados_guardados = result_r[1]
 
-            # print(f"Dados rolados: {dados_rolados}")
-            # print(f"Dados guardados: {dados_guardados}")
+            print(f"Dados rolados: {dados_rolados}")
+            print(f"Dados guardados: {dados_guardados}")
         # if (3) faz a rerrolagem
         elif comando == '3':
             if rerro < 2:
@@ -93,12 +93,12 @@ while i < 12:
                 dados_rolados = rolar_dados(qntd)
 
                 rerro += 1
-                # print(f"Dados rolados: {dados_rolados}")
-                # print(f"Dados guardados: {dados_guardados}")
+            print(f"Dados rolados: {dados_rolados}")
+            print(f"Dados guardados: {dados_guardados}")
             else:
                 print("Você já usou todas as rerrolagens.")
-                # print(f"Dados rolados: {dados_rolados}")
-                # print(f"Dados guardados: {dados_guardados}")
+                print(f"Dados rolados: {dados_rolados}")
+                print(f"Dados guardados: {dados_guardados}")
         # if (4) imprime a cartela
         elif comando == '4':
             imprime_cartela(cartela)
@@ -112,6 +112,7 @@ while i < 12:
 
     while True:
         combinacao = input("Digite combinação desejada:")
+        dados_totais = dados_guardados + dados_rolados
         if combinacao in ['1', '2', '3', '4', '5', '6']:
             if cartela['regra_simples'][int(combinacao)] != -1:
                 print("Essa combinação já foi utilizada.")
