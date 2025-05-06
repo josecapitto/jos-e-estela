@@ -156,9 +156,14 @@
 
 
 
-from funcoes import rolar_dados, guardar_dado, remover_dado, calcula_pontos_regra_simples, calcula_pontos_soma, calcula_pontos_sequencia_baixa, calcula_pontos_sequencia_alta, calcula_pontos_full_house, calcula_pontos_quadra, calcula_pontos_quina, calcula_pontos_regra_avancada, faz_jogada, imprime_cartela
+from funcoes import (
+    rolar_dados, guardar_dado, remover_dado, calcula_pontos_regra_simples,
+    calcula_pontos_soma, calcula_pontos_sequencia_baixa, calcula_pontos_sequencia_alta,
+    calcula_pontos_full_house, calcula_pontos_quadra, calcula_pontos_quina,
+    calcula_pontos_regra_avancada, faz_jogada, imprime_cartela
+)
 
-cartela= {
+cartela = {
     'regra_simples': {1: -1, 2: -1, 3: -1, 4: -1, 5: -1, 6: -1},
     'regra_avancada': {
         'sem_combinacao': -1,
@@ -172,18 +177,17 @@ cartela= {
 
 imprime_cartela(cartela)
 
+dados_guardados = []
 dados_rolados = rolar_dados(5)
 print(f"Dados rolados: {dados_rolados}")
-
-dados_guardados = []
 print(f"Dados guardados: {dados_guardados}")
 
 combinacao = " "
 comando = 1
-i = 0 
+i = 0
 
-while i < 12:    
-    dados_guardados = []        
+while i < 12:
+    dados_guardados = []
     dados_rolados = rolar_dados(5)
     rerro = 0
     comando = 1
@@ -217,11 +221,7 @@ while i < 12:
             print(f"Dados guardados: {dados_guardados}")
             while True:
                 combinacao = input("Digite combinação desejada:")
-                dados_totais = []
-                for item in dados_guardados:
-                    dados_totais.append(item)
-                for item in dados_rolados:
-                    dados_totais.append(item)
+                dados_totais = dados_guardados + dados_rolados
 
                 if combinacao in ['1', '2', '3', '4', '5', '6']:
                     if cartela['regra_simples'][int(combinacao)] != -1:
@@ -248,15 +248,16 @@ pontuacao_final = 0
 soma_simples = 0
 
 for valor in cartela['regra_simples'].values():
-    if valor > 0:
-        soma_simples = soma_simples + valor
-        pontuacao_final = pontuacao_final + valor
+    if valor != -1:  # somar inclusive se for 0
+        soma_simples += valor
+        pontuacao_final += valor
 
 if soma_simples >= 63:
-    pontuacao_final = pontuacao_final + 35
+    pontuacao_final += 35
 
 for valor in cartela['regra_avancada'].values():
-    if valor != -1:
-        pontuacao_final = pontuacao_final + valor
+    if valor != -1:  # somar inclusive se for 0
+        pontuacao_final += valor
 
 print(f"Pontuação total: {pontuacao_final}")
+
