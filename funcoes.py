@@ -153,8 +153,23 @@ def faz_jogada(dados, categoria, aonde_joga):
         aonde_joga['regra_simples'][num_categoria] = pontuacao
     else:
         pontos = calcula_pontos_regra_avancada(dados)
-        aonde_joga['regra_avancada'][categoria] = pontos[categoria]
+        if pontos[categoria] > 0:
+            aonde_joga['regra_avancada'][categoria] = pontos[categoria]
+        else:
+            print("Jogada inválida. Nenhuma pontuação possível para essa combinação.")
+            aonde_joga['regra_avancada'][categoria] = 0 
     return aonde_joga
+
+# def faz_jogada(dados, categoria, aonde_joga):
+#     if categoria in ['1', '2', '3', '4', '5', '6']:
+#         pontos = calcula_pontos_regra_simples(dados)
+#         num_categoria = int(categoria)
+#         pontuacao = pontos[num_categoria]
+#         aonde_joga['regra_simples'][num_categoria] = pontuacao
+#     else:
+#         pontos = calcula_pontos_regra_avancada(dados)
+#         aonde_joga['regra_avancada'][categoria] = pontos[categoria]
+#     return aonde_joga
 
 
 # Cartela do Jogo
