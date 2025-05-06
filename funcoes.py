@@ -40,7 +40,7 @@ def calcula_pontos_soma(sequencia):
     soma = 0 
     for i in sequencia:
         soma += i
-    valor = soma
+        valor = soma
     return valor
 
 # Questão 6 - Função para calcular a pontuação de sequencia baixa
@@ -76,7 +76,6 @@ def calcula_pontos_sequencia_alta (faces):
 # Questão 8 - Calcula pontuação do full-house
 def calcula_pontos_full_house(sequencia):
     soma = 0 
-    valor = 0
     dic = {}
     for numero in sequencia:
         if numero in dic:
@@ -94,7 +93,6 @@ def calcula_pontos_full_house(sequencia):
 # Questão 9 - Faz pontos da quadra 
 def calcula_pontos_quadra(sequencia):
     soma = 0 
-    valor = 0
     dic = {}
     for numero in sequencia:
         if numero in dic:
@@ -114,6 +112,7 @@ def calcula_pontos_quadra(sequencia):
 
 # Questão 10 - Faz pontos de quina
 def calcula_pontos_quina (sequencia):
+    soma = 0 
     dic = {}
     for numero in sequencia:
         if numero in dic:
@@ -144,7 +143,7 @@ def calcula_pontos_regra_avancada(sequencia):
     dic['sequencia_baixa'] = val_baixo
     return dic
 
-#Questão 12 - Faz jogada
+# Questão 12 - Faz jogada
 def faz_jogada(dados, categoria, aonde_joga):
     if categoria in ['1', '2', '3', '4', '5', '6']:
         pontos = calcula_pontos_regra_simples(dados)
@@ -153,24 +152,8 @@ def faz_jogada(dados, categoria, aonde_joga):
         aonde_joga['regra_simples'][num_categoria] = pontuacao
     else:
         pontos = calcula_pontos_regra_avancada(dados)
-        if pontos[categoria] > 0:
-            aonde_joga['regra_avancada'][categoria] = pontos[categoria]
-        else:
-            print("Jogada inválida. Nenhuma pontuação possível para essa combinação.")
-            
+        aonde_joga['regra_avancada'][categoria] = pontos[categoria]
     return aonde_joga
-
-# def faz_jogada(dados, categoria, aonde_joga):
-#     if categoria in ['1', '2', '3', '4', '5', '6']:
-#         pontos = calcula_pontos_regra_simples(dados)
-#         num_categoria = int(categoria)
-#         pontuacao = pontos[num_categoria]
-#         aonde_joga['regra_simples'][num_categoria] = pontuacao
-#     else:
-#         pontos = calcula_pontos_regra_avancada(dados)
-#         aonde_joga['regra_avancada'][categoria] = pontos[categoria]
-#     return aonde_joga
-
 
 # Cartela do Jogo
 def imprime_cartela(cartela):
