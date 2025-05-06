@@ -117,11 +117,13 @@ while i < 12:
                 print("Essa combinação já foi utilizada.")
             else:
                 cartela = faz_jogada(dados_guardados, combinacao, cartela)
+                break
         elif combinacao in cartela['regra_avancada']:
             if cartela['regra_avancada'][combinacao] != -1:
                 print("Essa combinação já foi utilizada.")
             else:
                 cartela = faz_jogada(dados_guardados, combinacao, cartela)
+                break
         else:
             print("Combinação inválida. Tente novamente.")
 #     dados_guardados = []
