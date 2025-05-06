@@ -113,7 +113,6 @@ def calcula_pontos_quadra(sequencia):
 
 # Questão 10 - Faz pontos de quina
 def calcula_pontos_quina (sequencia):
-    soma = 0 
     dic = {}
     for numero in sequencia:
         if numero in dic:
