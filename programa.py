@@ -213,6 +213,8 @@ while i < 12:
             imprime_cartela(cartela)
 
         elif comando == '0':
+            print(f"Dados rolados: {dados_rolados}")
+            print(f"Dados guardados: {dados_guardados}")
             while True:
                 combinacao = input("Digite combinação desejada:")
                 dados_totais = []

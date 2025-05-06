@@ -92,24 +92,27 @@ def calcula_pontos_full_house(sequencia):
 
 # Questão 9 - Faz pontos da quadra 
 def calcula_pontos_quadra(sequencia):
-    soma = 0 
-    valor = 0 
     dic = {}
     for numero in sequencia:
         if numero in dic:
-            dic[numero] += 1 
+            dic[numero] += 1
         else:
             dic[numero] = 1
-    
-    for valores in dic.values():
-        if valores >= 4:
-            for num in sequencia:
-                soma += num
-                valor = soma
-            break       
+
+    tem_quadra = False
+    for valor in dic.values():
+        if valor >= 4:
+            tem_quadra = True
+            break
+
+    if tem_quadra:
+        soma = 0
+        for num in sequencia:
+            soma = soma + num  # soma manual, sem sum()
+        return soma
     else:
-        valor = 0 
-    return valor
+        return 0
+
 
 # Questão 10 - Faz pontos de quina
 def calcula_pontos_quina (sequencia):
@@ -144,16 +147,26 @@ def calcula_pontos_regra_avancada(sequencia):
     return dic
 
 # Questão 12 - Faz jogada
+# def faz_jogada(dados, categoria, aonde_joga):
+#     if categoria in ['1', '2', '3', '4', '5', '6']:
+#         pontos = calcula_pontos_regra_simples(dados)
+#         num_categoria = int(categoria)
+#         pontuacao = pontos[num_categoria]
+#         aonde_joga['regra_simples'][num_categoria] = pontuacao
+#     else:
+#         pontos = calcula_pontos_regra_avancada(dados)
+#         aonde_joga['regra_avancada'][categoria] = pontos[categoria]
+#     return aonde_joga
 def faz_jogada(dados, categoria, aonde_joga):
     if categoria in ['1', '2', '3', '4', '5', '6']:
-        pontos = calcula_pontos_regra_simples(dados)
         num_categoria = int(categoria)
-        pontuacao = pontos[num_categoria]
+        pontuacao = calcula_pontos_regra_simples(dados, num_categoria)
         aonde_joga['regra_simples'][num_categoria] = pontuacao
     else:
         pontos = calcula_pontos_regra_avancada(dados)
         aonde_joga['regra_avancada'][categoria] = pontos[categoria]
     return aonde_joga
+
 
 # Cartela do Jogo
 def imprime_cartela(cartela):
