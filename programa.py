@@ -226,8 +226,6 @@ while i < 12:
             for item in dados_rolados:
                 dados_totais.append(item)
 
-            print(f"DEBUG: Usando dados_totais: {dados_totais}")  # 🔍 debug temporário
-
             if combinacao in ['1', '2', '3', '4', '5', '6']:
                 if cartela['regra_simples'][int(combinacao)] != -1:
                     print("Essa combinação já foi utilizada.")
