@@ -161,7 +161,7 @@ def faz_jogada(dados, categoria, aonde_joga):
     if categoria in ['1', '2', '3', '4', '5', '6']:
         num_categoria = int(categoria)
         pontuacao = calcula_pontos_regra_simples(dados)
-        aonde_joga['regra_simples'][num_categoria] = pontuacao
+        aonde_joga['regra_simples'][num_categoria] = pontuacao[num_categoria]
     else:
         pontos = calcula_pontos_regra_avancada(dados)
         aonde_joga['regra_avancada'][categoria] = pontos[categoria]
