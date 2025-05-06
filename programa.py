@@ -1,4 +1,3 @@
-
 from funcoes import (
     rolar_dados, guardar_dado, remover_dado, calcula_pontos_regra_simples,
     calcula_pontos_soma, calcula_pontos_sequencia_baixa, calcula_pontos_sequencia_alta,
