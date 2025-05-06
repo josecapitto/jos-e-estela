@@ -110,7 +110,7 @@ while i < 12:
     
     # while para verificar qual combinacao colocar na cartela 
 
-    while combinacao == " ":
+    while True:
         combinacao = input("Digite combinação desejada:")
         if combinacao in ['1', '2', '3', '4', '5', '6']:
             if cartela['regra_simples'][int(combinacao)] != -1:
@@ -124,13 +124,12 @@ while i < 12:
                 cartela = faz_jogada(dados_guardados, combinacao, cartela)
         else:
             print("Combinação inválida. Tente novamente.")
-    dados_guardados = []
-    qntd = 5
-    dados_rolados = rolar_dados(qntd)
-    print(f"Dados rolados: {dados_rolados}")
-    print(f"Dados guardados: {dados_guardados}")
-
-    i+=1 #AAAA 
+#     dados_guardados = []
+#     qntd = 5
+#     dados_rolados = rolar_dados(qntd)
+#     print(f"Dados rolados: {dados_rolados}")
+#     print(f"Dados guardados: {dados_guardados}")
+# =
 
 imprime_cartela(cartela)
 
