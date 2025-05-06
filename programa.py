@@ -147,6 +147,6 @@ if soma_simples >= 63:
 
 for valor in cartela['regra_avancada']:
     if valor != -1:
-        pontuacao_final += valor
+        pontuacao_final += int(valor)
 
 print(f"Pontuação total: {pontuacao_final}")
