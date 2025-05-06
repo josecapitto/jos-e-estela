@@ -144,27 +144,16 @@ def calcula_pontos_regra_avancada(sequencia):
     dic['sequencia_baixa'] = val_baixo
     return dic
 
-# Questão 12 - Faz jogada
-# def faz_jogada(dados, categoria, aonde_joga):
-#     if categoria in ['1', '2', '3', '4', '5', '6']:
-#         pontos = calcula_pontos_regra_simples(dados)
-#         num_categoria = int(categoria)
-#         pontuacao = pontos[num_categoria]
-#         aonde_joga['regra_simples'][num_categoria] = pontuacao
-#     else:
-#         pontos = calcula_pontos_regra_avancada(dados)
-#         aonde_joga['regra_avancada'][categoria] = pontos[categoria]
-#     return aonde_joga
+Questão 12 - Faz jogada
 def faz_jogada(dados, categoria, aonde_joga):
     if categoria in ['1', '2', '3', '4', '5', '6']:
         pontos = calcula_pontos_regra_simples(dados)
         num_categoria = int(categoria)
-        if aonde_joga['regra_simples'][num_categoria] == -1:
-            aonde_joga['regra_simples'][num_categoria] = pontos.get(num_categoria, 0)
+        pontuacao = pontos[num_categoria]
+        aonde_joga['regra_simples'][num_categoria] = pontuacao
     else:
         pontos = calcula_pontos_regra_avancada(dados)
-        if aonde_joga['regra_avancada'][categoria] == -1:
-            aonde_joga['regra_avancada'][categoria] = pontos.get(categoria, 0)
+        aonde_joga['regra_avancada'][categoria] = pontos[categoria]
     return aonde_joga
 
 

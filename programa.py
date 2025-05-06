@@ -57,45 +57,48 @@ while i < 12:
         # OS IFS que funcionam dependendo do comando 
         # if (1) adiciona nos dados_guardados
         if comando == '1':
-            try:
-                indice_g = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
-            except ValueError:
-                print("Índice inválido. Tente novamente.")
-                continue
+            indice_g = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
+
+            # try:
+            #     indice_g = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
+            # except ValueError:
+            #     print("Índice inválido. Tente novamente.")
+            #     continue
 
             result_g = guardar_dado(dados_rolados, dados_guardados, indice_g)
         
             dados_rolados = result_g[0]
             dados_guardados = result_g[1]
 
-            print(f"Dados rolados: {dados_rolados}")
-            print(f"Dados guardados: {dados_guardados}")
+            # print(f"Dados rolados: {dados_rolados}")
+            # print(f"Dados guardados: {dados_guardados}")
         # if (2) retira dos dados_guardados
         elif comando == '2':
-            try:
-                indice_r = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
-            except ValueError:
-                print("Índice inválido. Tente novamente.")
-                continue
+            indice_r = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
+            # try:
+            #     indice_r = int(input("Digite o índice do dado a ser guardado (0 a 4):"))
+            # except ValueError:
+            #     print("Índice inválido. Tente novamente.")
+            #     continue
             result_r = remover_dado(dados_rolados, dados_guardados, indice_r)
             dados_rolados = result_r[0]
             dados_guardados = result_r[1]
 
-            print(f"Dados rolados: {dados_rolados}")
-            print(f"Dados guardados: {dados_guardados}")
+            # print(f"Dados rolados: {dados_rolados}")
+            # print(f"Dados guardados: {dados_guardados}")
         # if (3) faz a rerrolagem
         elif comando == '3':
             if rerro < 2:
-                qntd = 5 - len(dados_guardados)
+                qntd = len(dados_rolados)
                 dados_rolados = rolar_dados(qntd)
 
                 rerro += 1
-                print(f"Dados rolados: {dados_rolados}")
-                print(f"Dados guardados: {dados_guardados}")
+                # print(f"Dados rolados: {dados_rolados}")
+                # print(f"Dados guardados: {dados_guardados}")
             else:
                 print("Você já usou todas as rerrolagens.")
-                print(f"Dados rolados: {dados_rolados}")
-                print(f"Dados guardados: {dados_guardados}")
+                # print(f"Dados rolados: {dados_rolados}")
+                # print(f"Dados guardados: {dados_guardados}")
         # if (4) imprime a cartela
         elif comando == '4':
             imprime_cartela(cartela)
@@ -147,28 +150,3 @@ for valor in cartela['regra_avancada'].values():
         pontuacao_final += valor
 
 print(f"Pontuação total: {pontuacao_final}")
-
-
-
-
-
-# pontuacao_final = 0
-# soma_simples = 0
-
-# # Soma da regra simples
-# for categoria in cartela['regra_simples']:
-#     if cartela['regra_simples'][categoria] != -1:
-#         soma_simples += cartela['regra_simples'][categoria]
-#         pontuacao_final += cartela['regra_simples'][categoria]
-
-# # bônus
-# if soma_simples >= 63:
-#     pontuacao_final += 35
-
-# # Soma da regra avançada
-# for tipo, val in cartela['regra_avancada'].items():
-#     if val != -1:
-#         pontuacao_final += val
-
-# print(f"Pontuação total: {pontuacao_final}")
-# # verificando mudancas
