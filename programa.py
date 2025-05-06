@@ -1,11 +1,11 @@
 from funcoes import rolar_dados, guardar_dado, remover_dado, calcula_pontos_regra_simples, calcula_pontos_soma, calcula_pontos_sequencia_baixa, calcula_pontos_sequencia_alta, calcula_pontos_full_house, calcula_pontos_quadra, calcula_pontos_quina, calcula_pontos_regra_avancada, faz_jogada, imprime_cartela
 # Variaveis para guardar os pontos de cada ponto da regra avancada 
-cinco_iguais = 0
-full_house = 0 
-quadra = 0
-sem_combinacao = 0 
-sequencia_baixa = 0
-sequencia_alta = 0
+# cinco_iguais = 0
+# full_house = 0 
+# quadra = 0
+# sem_combinacao = 0 
+# sequencia_baixa = 0
+# sequencia_alta = 0
 
 # Cartela do jogo (vazia por enquanto) e o print dela 
 cartela= {
