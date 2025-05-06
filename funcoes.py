@@ -157,7 +157,7 @@ def faz_jogada(dados, categoria, aonde_joga):
             aonde_joga['regra_avancada'][categoria] = pontos[categoria]
         else:
             print("Jogada inválida. Nenhuma pontuação possível para essa combinação.")
-            aonde_joga['regra_avancada'][categoria] = 0 
+            aonde_joga['regra_avancada'][categoria] = -1 
     return aonde_joga
 
 # def faz_jogada(dados, categoria, aonde_joga):
