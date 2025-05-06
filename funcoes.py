@@ -144,7 +144,7 @@ def calcula_pontos_regra_avancada(sequencia):
     dic['sequencia_baixa'] = val_baixo
     return dic
 
-Questão 12 - Faz jogada
+#Questão 12 - Faz jogada
 def faz_jogada(dados, categoria, aonde_joga):
     if categoria in ['1', '2', '3', '4', '5', '6']:
         pontos = calcula_pontos_regra_simples(dados)
